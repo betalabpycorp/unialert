@@ -23,7 +23,7 @@ document.getElementById('login-form').addEventListener('submit', (e) => {
   if (user) {
     // Login correcto → entrar al dashboard
     localStorage.setItem('username', user.username);
-    window.location.href = 'html/dashboard.html';
+    window.location.href = 'html/dash-usu.html';
   } else {
     alert('Usuario o contraseña incorrectos');
   }
