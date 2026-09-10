@@ -1,9 +1,14 @@
-// Escuchar el submit del formulario
-document.getElementById('login-form').addEventListener('submit', async (e) => {
-  e.preventDefault();   // ⭐ evita que el navegador envíe y recargue
+// ========== USUARIOS VÁLIDOS (edita aquí) ==========
+const USUARIOS = [
+  { username: 'admin',  password: 'admin1234' },
+  { username: 'maria',  password: 'maria123'  },
+  { username: 'profe',  password: 'profe123'  }
+];
 
-  // ⭐ Obtener los valores de los inputs
-  const usuario = document.getElementById('txtusuario').value.trim();
+document.getElementById('login-form').addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  const usuario  = document.getElementById('txtusuario').value.trim();
   const password = document.getElementById('txtpass').value.trim();
 
   // Validación básica
@@ -12,24 +17,14 @@ document.getElementById('login-form').addEventListener('submit', async (e) => {
     return;
   }
 
-  try {
-    const respuesta = await fetch('http://localhost:3000/login', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ username: usuario, password })
-    });
+  // Buscar si el usuario existe y la contraseña coincide
+  const user = USUARIOS.find(u => u.username === usuario && u.password === password);
 
-    const resultado = await respuesta.json();
-
-    if (respuesta.ok) {
-      localStorage.setItem('token', resultado.token);
-      localStorage.setItem('username', resultado.username);
-      window.location.href = 'dashboard.html';
-    } else {
-      alert('Error: ' + resultado.error);
-    }
-  } catch (error) {
-    console.error(error);
-    alert('No se pudo conectar al servidor');
+  if (user) {
+    // Login correcto → entrar al dashboard
+    localStorage.setItem('username', user.username);
+    window.location.href = 'dashboard.html';
+  } else {
+    alert('Usuario o contraseña incorrectos');
   }
 });
