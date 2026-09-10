@@ -1,0 +1,97 @@
+/* ========== RESET ========== */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+html, body {
+  max-width: 100%;
+  min-height: 100dvh;
+  overflow-x: clip;
+  font-size: 16px;
+  background-color:  #011c41;
+}
+
+/*header*/
+header{
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+}
+
+header p, h3{
+  color:white;
+}
+
+.icono-usuario{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.icono-notificacion{
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  margin-top: 10px;
+}
+
+.icono-reporte{
+  width: 100px;
+}
+
+.icono-flecha{
+  width: 20px;
+}
+
+.btn-reporte{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: #1bd625;
+  margin: 20px;
+  padding: 10px;
+  text-decoration: none;
+  color: white;
+}
+
+.btn-reporte h3{
+  color:black;
+}
+
+/*resumenes*/
+
+.contenedor-resumen{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 20px;
+  gap: 35px;
+}
+
+.btn-resumen{
+  width: 100%;
+  height: 100px;
+  background-color: #00498d;
+  padding: 10px;
+  text-decoration: none;
+  border-radius: 10px;
+}
+
+.btn-resumen p{
+  color: white;
+}
+
+.icono-resumen{
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
