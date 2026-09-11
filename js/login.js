@@ -1,30 +1,43 @@
-// ========== USUARIOS VÁLIDOS (edita aquí) ==========
-const USUARIOS = [
-  { username: 'admin',  password: 'admin1234' },
-  { username: 'maria',  password: 'maria123'  },
-  { username: 'profe',  password: 'profe123'  }
-];
+// Referencias a los elementos del HTML
+const inputImagen = document.getElementById('imagen');
+const preview = document.getElementById('preview');
 
-document.getElementById('login-form').addEventListener('submit', (e) => {
-  e.preventDefault();
+// Escuchar cuando el usuario selecciona un archivo
+inputImagen.addEventListener('change', (e) => {
+  const archivo = e.target.files[0];
 
-  const usuario  = document.getElementById('txtusuario').value.trim();
-  const password = document.getElementById('txtpass').value.trim();
-
-  // Validación básica
-  if (!usuario || !password) {
-    alert('Completa todos los campos');
+  // Si no hay archivo (canceló el selector), ocultamos el preview
+  if (!archivo) {
+    preview.src = '';
+    preview.style.display = 'none';
     return;
   }
 
-  // Buscar si el usuario existe y la contraseña coincide
-  const user = USUARIOS.find(u => u.username === usuario && u.password === password);
-
-  if (user) {
-    // Login correcto → entrar al dashboard
-    localStorage.setItem('username', user.username);
-    window.location.href = 'html/dash-usu.html';
-  } else {
-    alert('Usuario o contraseña incorrectos');
+  // Validación: solo imágenes
+  if (!archivo.type.startsWith('image/')) {
+    alert('Solo se permiten imágenes.');
+    inputImagen.value = '';
+    preview.src = '';
+    preview.style.display = 'none';
+    return;
   }
+
+  // Validación: tamaño máximo 5 MB
+  if (archivo.size > 5 * 1024 * 1024) {
+    alert('La imagen no debe superar los 5 MB.');
+    inputImagen.value = '';
+    preview.src = '';
+    preview.style.display = 'none';
+    return;
+  }
+
+  // Leer el archivo y mostrarlo
+  const reader = new FileReader();
+
+  reader.onload = (evento) => {
+    preview.src = evento.target.result; // base64
+    preview.style.display = 'block';
+  };
+
+  reader.readAsDataURL(archivo);
 });

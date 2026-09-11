@@ -1,0 +1,136 @@
+/* ========== RESET ========== */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+html, body {
+  max-width: 100%;
+  min-height: 100dvh;
+  overflow-x: clip;
+  font-size: 16px;
+  background-color:  #011c41;
+}
+
+/*header*/
+header{
+  display: flex;
+  margin: 20px;
+  gap: 20px;
+  align-items: center;
+}
+
+.flecha-izquierda{
+   width: 30px;
+}
+
+h3{
+  color:white;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  padding: 30px;
+  gap: 15px;
+  background-color: white;
+  margin: 50px 20px;
+  border-radius: 10px;
+}
+
+form label{
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+}
+
+form textarea{
+  padding: 10px;
+  height: 100px;
+}     
+
+select{
+  padding: 10px;
+  width: 100%;
+  background-color: white;
+}
+
+select:focus{
+  outline: none;
+  border: 2px solid #002383;
+}
+
+textarea:focus{
+  outline: none;
+  border: 2px solid #002383;
+}
+
+button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  background-color: #002383;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 25px;
+}
+
+#preview {
+  max-width: 100%;
+  max-height: 300px;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.upload-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 24px 16px;
+  border: 2px dashed #cbd5e1;
+  border-radius: 12px;
+  background-color: #f8fafc;
+  cursor: pointer;
+  text-align: center;
+  transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.1s ease;
+}
+
+.upload-box:hover {
+  border-color: #2563eb;
+  background-color: #eff6ff;
+}
+
+.upload-box:active {
+  transform: scale(0.99);
+}
+
+.upload-texto {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.upload-subtexto {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+/* Cuando hay imagen seleccionada */
+.upload-box.tiene-imagen {
+  border-color: #22c55e;
+  background-color: #f0fdf4;
+}

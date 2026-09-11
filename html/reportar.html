@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reportar Problema</title>
+    <link rel="stylesheet" href="../css/reportar.css">
+</head>
+
+<body>
+    <header>
+        <a href="../html/dash-usu.html">
+            <img src="../img/flecha-izquierda.png" alt="flecha izquierda" class="flecha-izquierda">
+        </a>
+        <h3>Reportar Problema</h3>
+    </header>
+    <form action="" id="form-reporte">
+        <label>Aula:</label>
+        <select name="aula" id="aula" required>
+            <option value="">Seleccione un aula</option>
+            <option value="Aula 1">Aula 1</option>
+            <option value="Aula 2">Aula 2</option>
+            <option value="Aula 3">Aula 3</option>
+        </select>
+
+        <label>Tipo de problema:</label>
+        <select name="tipo" id="tipo" required>
+            <option value="">Seleccione un tipo</option>
+            <option value="Hardware">Hardware</option>
+            <option value="Software">Software</option>
+            <option value="Infraestructura">Infraestructura</option>
+        </select>
+
+        <label>Descripción del problema:</label>
+        <textarea name="descripcion" id="descripcion" minlength="10" maxlength="500" required></textarea>
+
+        <label>Adjuntar imagen (opcional):</label>
+        <label for="imagen" class="upload-box" id="upload-box">
+            <span class="upload-texto">📷 Toca para subir una imagen</span>
+            <span class="upload-subtexto">JPG, PNG · máx 5 MB</span>
+        </label>
+
+        <input type="file" name="imagen" id="imagen" accept="image/*" hidden>
+
+        <img id="preview" src="" alt="Vista previa" style="display:none;">
+
+        <input type="file" name="imagen" id="imagen" accept="image/*" hidden>
+        <button type="submit" class="btn-enviar">
+            <img src="../img/enviar.png" alt="enviar" class="icono-enviar">
+            Enviar Reporte
+        </button>
+
+    </form>
+
+    <script src="../js/mostrarimg.js"></script>
+</body>
+
+</html>
