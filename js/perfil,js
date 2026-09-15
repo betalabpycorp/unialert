@@ -1,0 +1,65 @@
+document.addEventListener('DOMContentLoaded', function () {
+    cargarDatosPerfil();
+});
+
+
+async function cargarDatosPerfil() {
+
+    const nombre =
+        document.getElementById('nombre-perfil');
+
+    const correo =
+        document.getElementById('correo-perfil');
+
+
+    if (!nombre || !correo) {
+        console.error(
+            'No se encontraron los elementos del perfil.'
+        );
+        return;
+    }
+
+
+    try {
+
+        const respuesta = await fetch(
+            '../php/obtener-usuario.php',
+            {
+                method: 'GET',
+                credentials: 'include'
+            }
+        );
+
+
+        const datos = await respuesta.json();
+
+
+        if (!respuesta.ok) {
+
+            throw new Error(
+                datos.error ||
+                'No se pudieron obtener los datos del usuario'
+            );
+
+        }
+
+
+        nombre.textContent = datos.nombre;
+
+        correo.textContent = datos.correo;
+
+
+    } catch (error) {
+
+        console.error(
+            'Error cargando perfil:',
+            error
+        );
+
+        nombre.textContent = 'Usuario';
+
+        correo.textContent =
+            'Correo no disponible';
+
+    }
+}

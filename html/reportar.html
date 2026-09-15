@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reportar Problema</title>
     <link rel="stylesheet" href="../css/reportar.css">
+    <link rel="stylesheet" href="../css/navegador.css">
 </head>
 
 <body>
@@ -17,20 +18,13 @@
     </header>
     <form action="" id="form-reporte">
         <label>Aula:</label>
-        <select name="aula" id="aula" required>
-            <option value="">Seleccione un aula</option>
-            <option value="Aula 1">Aula 1</option>
-            <option value="Aula 2">Aula 2</option>
-            <option value="Aula 3">Aula 3</option>
-        </select>
+<input type="text" name="aula" id="aula" placeholder="Ej: Aula 201, Laboratorio 3" 
+       maxlength="50" required>
 
         <label>Tipo de problema:</label>
-        <select name="tipo" id="tipo" required>
-            <option value="">Seleccione un tipo</option>
-            <option value="Hardware">Hardware</option>
-            <option value="Software">Software</option>
-            <option value="Infraestructura">Infraestructura</option>
-        </select>
+<select name="tipo" id="id_tipo" required>
+    <option value="">Cargando...</option>
+</select>
 
         <label>Descripción del problema:</label>
         <textarea name="descripcion" id="descripcion" minlength="10" maxlength="500" required></textarea>
@@ -43,17 +37,33 @@
 
         <input type="file" name="imagen" id="imagen" accept="image/*" hidden>
 
-        <img id="preview" src="" alt="Vista previa" style="display:none;">
-
-        <input type="file" name="imagen" id="imagen" accept="image/*" hidden>
+<img id="preview" src="" alt="Vista previa" style="display:none;">
         <button type="submit" class="btn-enviar">
-            <img src="../img/enviar.png" alt="enviar" class="icono-enviar">
-            Enviar Reporte
-        </button>
+    <img src="../img/enviar.png" alt="enviar" class="icono-enviar">
+    Enviar Reporte
+</button>
 
     </form>
 
+    <footer>
+  <a href="../html/dash-usu.html" class="btn-footer">
+    <img class="icono-footer" src="../img/inicio.png" alt="Inicio">
+    <p>Inicio</p>
+  </a>
+
+  <a href="../html/mis-reportes.html" class="btn-footer">
+    <img class="icono-footer" src="../img/reportes.png" alt="Técnico">
+    <p>Reportes</p>
+  </a>
+
+</footer>
+
+
+
+
+
     <script src="../js/mostrarimg.js"></script>
+<script src="../js/reportar.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,102 @@
+/* perfil */
+.perfil-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 10px 20px 30px;
+  gap: 6px;
+}
+
+/* avatar con anillo */
+.perfil-avatar {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  padding: 3px;
+  background: linear-gradient(135deg, #1bd625, #00498d);
+  margin-bottom: 10px;
+}
+
+.perfil-foto {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #011c41;
+}
+
+.perfil-info h2 {
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.perfil-info p {
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+/* opciones */
+.perfil-opciones {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0 20px 100px;
+}
+
+.perfil-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #00498d;
+  padding: 16px;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.perfil-item:hover {
+  background: #005fbc;
+}
+
+.perfil-item:active {
+  transform: scale(0.98);
+}
+
+.perfil-item p {
+  color: white;
+  font-size: 15px;
+  margin: 0;
+  flex: 1;
+}
+
+.perfil-icono {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+/* flechita de la derecha */
+.perfil-flecha {
+  color: #9ca3af;
+  font-size: 22px;
+  line-height: 1;
+}
+
+/* cerrar sesión */
+.perfil-item.cerrar {
+  background: #b91c1c;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.perfil-item.cerrar:hover {
+  background: #dc2626;
+}
+
+.perfil-item.cerrar p {
+  text-align: center;
+  flex: none;
+  font-weight: 600;
+}

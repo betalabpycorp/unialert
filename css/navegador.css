@@ -1,0 +1,98 @@
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 68px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #ffffff;
+  border-top: 1px solid #e5e7eb;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.06);
+  z-index: 1000;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/*botones*/
+.btn-footer {
+  position: relative;
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+  color: #9ca3af;
+  font-size: 11px;
+  font-weight: 500;
+  transition: color 0.25s ease, transform 0.15s ease;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+.btn-footer p {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+
+.icono-footer {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  opacity: 0.6;
+  filter: grayscale(100%);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+/*botón activo*/
+.btn-footer.activo {
+  color: #4f46e5;
+  font-weight: 600;
+}
+
+.btn-footer.activo .icono-footer {
+  opacity: 1;
+  filter: grayscale(0%);
+}
+
+.btn-footer.activo::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  width: 24px;
+  height: 3px;
+  border-radius: 3px;
+  background: #4f46e5;
+}
+
+/*animación al presionar*/
+.btn-footer:active {
+  transform: scale(0.94);
+}
+
+@media (prefers-color-scheme: dark) {
+  footer {
+    background: #041c3f;
+    border-top-color: #374151;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4);
+  }
+  .btn-footer {
+    color: #9ca3af;
+  }
+  .btn-footer.activo {
+    color: #818cf8;
+  }
+  .btn-footer.activo::before {
+    background: #818cf8;
+  }
+}
+
+/*evita que el footer tape el contenido*/
+body {
+  padding-bottom: 80px;
+}
+

@@ -1,0 +1,3 @@
+2026-09-13 23:10:56 | Método: POST | Content-Type: application/json | Body: {"email":"soporte2026","password":"soporte2026"}
+2026-09-13 23:15:46 | Método: POST | Content-Type: application/json | Body: {"email":"soporte2026","password":"soporte2026"}
+2026-09-13 23:15:58 | Método: POST | Content-Type: application/json | Body: {"email":"soporte2026","password":"soporte2026"}

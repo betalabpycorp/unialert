@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>UniAlert - Técnico</title>
+
+
+    <link
+        rel="stylesheet"
+        href="../css/dash-usu.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/navegador.css"
+    >
+
+</head>
+
+
+<body>
+
+
+
+<!-- =========================
+        ENCABEZADO
+========================== -->
+
+<header>
+
+    <div>
+
+        <nav>
+
+            <img
+                src="../img/user.png"
+                alt="Usuario"
+                class="icono-usuario"
+            >
+
+
+            <p
+                class="saludo"
+                id="saludo"
+            >
+                Buenos días
+            </p>
+
+
+        </nav>
+
+
+
+        <h3
+            class="nombre-usuario"
+            id="nombre-usuario"
+        >
+            Cargando...
+        </h3>
+
+
+    </div>
+
+
+</header>
+
+
+
+
+
+
+<!-- =========================
+        CONTENIDO
+========================== -->
+
+<main>
+
+
+
+<!-- RESUMEN -->
+
+<h3 style="margin-left:20px;">
+
+    Resumen general
+
+</h3>
+
+
+
+
+<div class="contenedor-resumen">
+
+
+
+    <!-- TODOS -->
+
+    <a
+        href="../html/reportes-tecnico.html?estado=todos"
+        class="btn-resumen"
+    >
+
+        <img
+            class="icono-resumen"
+            src="../img/alert.png"
+            alt="Reportes"
+        >
+
+        <p>
+            Reportes
+        </p>
+
+
+    </a>
+
+
+
+
+
+
+
+    <!-- EN PROCESO -->
+
+
+    <a
+        href="../html/reportes-tecnico.html?estado=proceso"
+        class="btn-resumen"
+    >
+
+        <img
+            class="icono-resumen"
+            src="../img/proceso.png"
+            alt="Proceso"
+        >
+
+
+        <p>
+            En proceso
+        </p>
+
+
+    </a>
+
+
+
+
+
+
+
+
+    <!-- TERMINADOS -->
+
+
+    <a
+        href="../html/reportes-tecnico.html?estado=resuelto"
+        class="btn-resumen"
+    >
+
+        <img
+            class="icono-resumen"
+            src="../img/check.png"
+            alt="Terminados"
+        >
+
+
+        <p>
+            Terminados
+        </p>
+
+
+    </a>
+
+
+
+
+
+
+
+
+
+    <!-- PENDIENTES -->
+
+
+    <a
+        href="../html/reportes-tecnico.html?estado=pendiente"
+        class="btn-resumen"
+    >
+
+
+        <img
+            class="icono-resumen"
+            src="../img/close.png"
+            alt="Pendientes"
+        >
+
+
+        <p>
+            Pendientes
+        </p>
+
+
+    </a>
+
+
+
+
+</div>
+
+
+
+
+
+</main>
+
+
+
+
+
+
+
+
+
+<!-- =========================
+        FOOTER
+========================== -->
+
+
+<footer>
+
+
+
+<a
+    href="../html/dash-tecn.html"
+    class="btn-footer"
+>
+
+
+    <img
+        class="icono-footer"
+        src="../img/inicio.png"
+    >
+
+
+    <p>
+        Inicio
+    </p>
+
+
+</a>
+
+
+
+
+
+
+<a
+    href="../html/reportes-tecnico.html?estado=todos"
+    class="btn-footer"
+    id="footer-reportes"
+>
+
+
+    <img
+        class="icono-footer"
+        src="../img/reportes.png"
+    >
+
+
+    <p>
+        Reportes
+    </p>
+
+
+</a>
+
+
+
+
+</footer>
+
+
+
+
+
+
+
+
+
+<!-- =========================
+        JAVASCRIPT
+========================== -->
+
+
+<script src="../js/btn-activo.js"></script>
+
+<script src="../js/usuario.js"></script>
+
+<script src="../js/reportes-tecnico.js"></script>
+
+
+
+</body>
+
+</html>
